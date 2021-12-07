@@ -1,19 +1,29 @@
 //Global variables
 float canvasX, canvasY, canvasWidth, canvasHeight, drawingdiameter ;
   Boolean draw=false;
+  int one, ten;
+  float counting;
+
 void setup() {
 
   fullScreen();
+  one=1;
   
  
+  
+  ten=10;
   population();
-  rect(canvasX, canvasY, canvasWidth, canvasHeight);
 }//End setup()
 
 void draw() {
-  if (draw == true) 
+  println(counting);
+  ten=ten+one;
+  counting=ten+one;
+  
+  rect(canvasX*(counting/100), canvasY*(counting/25), canvasWidth, canvasHeight);
+  if (draw == true && mouseX>canvasX && mouseX<canvasX+canvasWidth && mouseY>canvasY && mouseY<canvasY+canvasHeight) 
   {
-    ellipse(mouseX, mouseY, drawingdiameter, drawingdiameter);
+    line(mouseX, mouseY, pmouseX, pmouseY);
   }//End line draw
 }//End  draw()
 
