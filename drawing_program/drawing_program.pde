@@ -1,6 +1,6 @@
 //Global variables
 float canvasX, canvasY, canvasWidth, canvasHeight, drawingdiameter ;
-  Boolean draw=false;
+  Boolean draw=false, move=true;
   int one, ten;
   float counting;
 
@@ -8,19 +8,33 @@ void setup() {
 
   fullScreen();
   one=1;
-  
- 
-  
   ten=10;
+  //
   population();
+  quitButtonSetup();
+  //
+  rect(canvasX, canvasY, canvasWidth, canvasHeight);
+  
 }//End setup()
 
 void draw() {
-  println(counting);
+  quitButtonDraw();
+  if (counting>100) 
+{
+  move = false;
+}
+  
+  
+  
+  if (move == true)
+  {
+    println(counting);
   ten=ten+one;
   counting=ten+one;
+  }
+
   
-  rect(canvasX*(counting/100), canvasY*(counting/25), canvasWidth, canvasHeight);
+  
   if (draw == true && mouseX>canvasX && mouseX<canvasX+canvasWidth && mouseY>canvasY && mouseY<canvasY+canvasHeight) 
   {
     line(mouseX, mouseY, pmouseX, pmouseY);
@@ -28,6 +42,8 @@ void draw() {
 }//End  draw()
 
 void mousePressed() {
+  quitButtonMousePressed();
+  //
   if (mouseX>canvasX && mouseX<canvasX+canvasWidth && mouseY>canvasY && mouseY<canvasY+canvasHeight) 
   {
 
