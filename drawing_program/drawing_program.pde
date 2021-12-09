@@ -12,6 +12,7 @@ void setup() {
   //
   population();
   quitButtonSetup();
+  textSetup();
   //
   rect(canvasX, canvasY, canvasWidth, canvasHeight);
   

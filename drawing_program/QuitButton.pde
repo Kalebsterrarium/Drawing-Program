@@ -24,8 +24,10 @@ void quitButtonDraw()
     quitButtonColour=yellow;
     
   }//End Quit Button Hover Over
+  
   fill(quitButtonColour);
   rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+  textCode(quitButton, 75, quitButtonX, quitButtonY , quitButtonWidth, quitButtonHeight);
 }//End quitButtonDraw
 
 void quitButtonMousePressed() {
