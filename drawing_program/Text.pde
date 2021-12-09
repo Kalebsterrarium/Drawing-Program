@@ -18,7 +18,7 @@ void textSetup() {
 quitButtonFont = createFont("Calibri",55);
 
 
-rect(quitButtonX, quitButtonY, quitButtonWidth, quitButtonHeight);
+
 
 
 }//End textSetup()
