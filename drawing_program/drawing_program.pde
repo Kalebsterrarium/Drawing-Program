@@ -3,9 +3,11 @@ float canvasX, canvasY, canvasWidth, canvasHeight, drawingdiameter ;
   Boolean draw=false, move=true;
   int one, ten;
   float counting;
-
+float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
+   
 void setup() {
 
+   
   fullScreen();
   one=1;
   ten=10;
@@ -13,9 +15,12 @@ void setup() {
   population();
   quitButtonSetup();
   textSetup();
-  //
-  rect(canvasX, canvasY, canvasWidth, canvasHeight);
   
+  //
+  rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
+  rect(canvasX, canvasY, canvasWidth, canvasHeight);
+  fill(white);
+   
 }//End setup()
 
 void draw() {
@@ -34,10 +39,10 @@ void draw() {
   counting=ten+one;
   }
 
-  
-  
+   
   if (draw == true && mouseX>canvasX && mouseX<canvasX+canvasWidth && mouseY>canvasY && mouseY<canvasY+canvasHeight) 
   {
+    test();
     line(mouseX, mouseY, pmouseX, pmouseY);
   }//End line draw
 }//End  draw()
