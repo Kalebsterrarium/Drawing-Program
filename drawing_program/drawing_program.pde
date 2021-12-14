@@ -4,7 +4,10 @@ float canvasX, canvasY, canvasWidth, canvasHeight, drawingdiameter ;
   int one, ten;
   float counting;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
-   
+ float backgroundX2, backgroundY2, backgroundWidth2, backgroundHeight2;
+ float backgroundX3, backgroundY3, backgroundWidth3, backgroundHeight3;
+float backgroundX4, backgroundY4, backgroundWidth4, backgroundHeight4;
+
 void setup() {
 
    
@@ -17,6 +20,9 @@ void setup() {
   textSetup();
   
   //
+   rect(backgroundX4, backgroundY4, backgroundWidth4, backgroundHeight4);
+  rect(backgroundX3, backgroundY3, backgroundWidth3, backgroundHeight3);
+  rect(backgroundX2, backgroundY2, backgroundWidth2, backgroundHeight2);
   rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
   rect(canvasX, canvasY, canvasWidth, canvasHeight);
   fill(white);
