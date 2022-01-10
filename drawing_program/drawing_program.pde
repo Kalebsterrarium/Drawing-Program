@@ -20,17 +20,15 @@ void setup() {
   textSetup();
   
   //
-   rect(backgroundX4, backgroundY4, backgroundWidth4, backgroundHeight4);
-  rect(backgroundX3, backgroundY3, backgroundWidth3, backgroundHeight3);
-  rect(backgroundX2, backgroundY2, backgroundWidth2, backgroundHeight2);
-  rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
+ 
+   
   rect(canvasX, canvasY, canvasWidth, canvasHeight);
   fill(white);
    
 }//End setup()
 
 void draw() {
-  quitButtonDraw();
+  
   if (counting>100) 
 {
   move = false;
@@ -45,12 +43,19 @@ void draw() {
   counting=ten+one;
   }
 
-   
   if (draw == true && mouseX>canvasX && mouseX<canvasX+canvasWidth && mouseY>canvasY && mouseY<canvasY+canvasHeight) 
   {
     test();
+     
     line(mouseX, mouseY, pmouseX, pmouseY);
   }//End line draw
+   noStroke();
+   rect(backgroundX4, backgroundY4, backgroundWidth4, backgroundHeight4);
+  rect(backgroundX3, backgroundY3, backgroundWidth3, backgroundHeight3);
+  rect(backgroundX2, backgroundY2, backgroundWidth2, backgroundHeight2);
+  rect(backgroundX, backgroundY, backgroundWidth, backgroundHeight);
+  strokeWeight(1);
+  quitButtonDraw();
 }//End  draw()
 
 void mousePressed() {
