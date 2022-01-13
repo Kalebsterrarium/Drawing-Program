@@ -45,9 +45,8 @@ void draw() {
   if (draw == true && mouseX>canvasX && mouseX<canvasX+canvasWidth && mouseY>canvasY && mouseY<canvasY+canvasHeight) 
   {
     test();
-    strokeWeight(1);
+    
     line(mouseX, mouseY, pmouseX, pmouseY);
-    strokeWeight(1);
      BackGround();
   }//End line draw
 
