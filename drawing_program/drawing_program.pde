@@ -82,6 +82,16 @@ void mousePressed() {
  {Linecolour=Green;}
  if (mouseX>blueX && mouseX<blueX+blueWidth && mouseY>blueY && mouseY<blueY+blueHeight) 
  {Linecolour=Blue;}
+ if (mouseX>indigoX && mouseX<indigoX+indigoWidth && mouseY>indigoY && mouseY<indigoY+indigoHeight) 
+ {Linecolour=Indigo;}
+ if (mouseX>violetX && mouseX<violetX+violetWidth && mouseY>violetY && mouseY<violetY+violetHeight) 
+ {Linecolour=Violet;}
+ if (mouseX>blackX && mouseX<blackX+blackWidth && mouseY>blackY && mouseY<blackY+blackHeight) 
+ {Linecolour=Black;}
+ if (mouseX>brownX && mouseX<brownX+brownWidth && mouseY>brownY && mouseY<brownY+brownHeight) 
+ {Linecolour=Brown;}
+ if (mouseX>grayX && mouseX<grayX+grayWidth && mouseY>grayY && mouseY<grayY+grayHeight) 
+ {Linecolour=Gray;}
 }//End mousePressed()
 
 void keyPressed() {
