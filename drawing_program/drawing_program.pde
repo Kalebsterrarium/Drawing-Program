@@ -73,25 +73,25 @@ void mousePressed() {
     }//End draw boolean
   }//End line draw
   if (mouseX>redX && mouseX<redX+redWidth && mouseY>redY && mouseY<redY+redHeight) 
- {Linecolour=Red;}
+ {Linecolour=Red; textcolour=Black;}
  if (mouseX>orangeX && mouseX<orangeX+orangeWidth && mouseY>orangeY && mouseY<orangeY+orangeHeight) 
- {Linecolour=Orange;}
+ {Linecolour=Orange; textcolour=Black;}
  if (mouseX>yellowX && mouseX<yellowX+yellowWidth && mouseY>yellowY && mouseY<yellowY+yellowHeight) 
- {Linecolour=Yellow;}
+ {Linecolour=Yellow; textcolour=Black;}
  if (mouseX>greenX && mouseX<greenX+greenWidth && mouseY>greenY && mouseY<greenY+greenHeight) 
- {Linecolour=Green;}
+ {Linecolour=Green; textcolour=Black;}
  if (mouseX>blueX && mouseX<blueX+blueWidth && mouseY>blueY && mouseY<blueY+blueHeight) 
- {Linecolour=Blue;}
+ {Linecolour=Blue; textcolour=Black;}
  if (mouseX>indigoX && mouseX<indigoX+indigoWidth && mouseY>indigoY && mouseY<indigoY+indigoHeight) 
- {Linecolour=Indigo;}
+ {Linecolour=Indigo; textcolour=Black;}
  if (mouseX>violetX && mouseX<violetX+violetWidth && mouseY>violetY && mouseY<violetY+violetHeight) 
- {Linecolour=Violet;}
+ {Linecolour=Violet; textcolour=Black;}
  if (mouseX>blackX && mouseX<blackX+blackWidth && mouseY>blackY && mouseY<blackY+blackHeight) 
- {Linecolour=Black;}
+ {Linecolour=Black; textcolour=white;}
  if (mouseX>brownX && mouseX<brownX+brownWidth && mouseY>brownY && mouseY<brownY+brownHeight) 
- {Linecolour=Brown;}
+ {Linecolour=Brown; textcolour=white;}
  if (mouseX>grayX && mouseX<grayX+grayWidth && mouseY>grayY && mouseY<grayY+grayHeight) 
- {Linecolour=Gray;}
+ {Linecolour=Gray; textcolour=Black;}
 }//End mousePressed()
 
 void keyPressed() {

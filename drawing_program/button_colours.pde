@@ -8,7 +8,10 @@ float violetX, violetY, violetWidth, violetHeight;
 float blackX, blackY, blackWidth, blackHeight;
 float brownX, brownY, brownWidth, brownHeight;
 float grayX, grayY, grayWidth, grayHeight;
-color Red=#FF0000,Yellow=#FFFF00,Orange=#FFA500,Green=#00FF00,Blue=#0000FF,Indigo=#4B0082,Violet=#8F00FF,Black=#000000,Brown=#964B00,Gray=#808080;
+float showcolourX,showcolourY,showcolourWidth,showcolourHeight;
+color Red=#FF0000,Yellow=#FFFF00,Orange=#FFA500,Green=#00FF00,Blue=#0000FF,Indigo=#4B0082,Violet=#8F00FF,Black=#000000,Brown=#964B00,Gray=#808080,textcolour=Black;
+String colour="Selected Colour";
+PFont Font;
 
 
 
@@ -54,6 +57,10 @@ grayX=displayWidth*0;
 grayY=displayHeight*9/10;
 grayWidth=displayWidth*1/10;
 grayHeight=displayHeight*1/10;
+showcolourX=displayWidth*1/10;
+  showcolourY=displayHeight*0;
+showcolourWidth=displayWidth*1/10;
+showcolourHeight=displayHeight*1/10;
 fill(Red);
  rect(redX, redY,redWidth, redHeight);
  fill(white);
@@ -83,4 +90,11 @@ fill(Green);
  fill(Gray);
  rect(grayX, grayY, grayWidth, grayHeight);
  fill(white);
+ Font = createFont ("Calibri",10);
+ textFont(Font,35);
+ 
+ fill(Linecolour);
+ rect(showcolourX,showcolourY,showcolourWidth,showcolourHeight);
+ fill(textcolour);
+ text(colour,showcolourX,showcolourY,showcolourWidth,showcolourHeight);
 }
