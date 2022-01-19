@@ -1,7 +1,7 @@
 //Global variables
 float canvasX, canvasY, canvasWidth, canvasHeight, drawingdiameter ;
 Boolean draw=false, move=true;
-int one, ten;
+int one, ten, Thick;
 float counting;
 float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float backgroundX2, backgroundY2, backgroundWidth2, backgroundHeight2;
@@ -14,6 +14,7 @@ Linecolour=#000000;
   fullScreen();
   one=1;
   ten=10;
+  Thick=1;
   //
   population();
   quitButtonSetup();
@@ -46,14 +47,15 @@ void draw() {
   {
     test();
     stroke(Linecolour);
+    strokeWeight(Thick);
     line(mouseX, mouseY, pmouseX, pmouseY);
-    
+    strokeWeight(1);
      
   }//End line draw
   fill(white);
 BackGround();
 Colourbuttons();
-
+Thickness();
   quitButtonDraw();
 }//End  draw()
 
