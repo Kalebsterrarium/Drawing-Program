@@ -9,9 +9,11 @@ float blackX, blackY, blackWidth, blackHeight;
 float brownX, brownY, brownWidth, brownHeight;
 float grayX, grayY, grayWidth, grayHeight;
 float showcolourX,showcolourY,showcolourWidth,showcolourHeight;
+float eraseX, eraseY, eraseWidth,eraseHeight;
 color Red=#FF0000,Yellow=#FFFF00,Orange=#FFA500,Green=#00FF00,Blue=#0000FF,Indigo=#4B0082,Violet=#8F00FF,Black=#000000,Brown=#964B00,Gray=#808080,textcolour=Black;
 String colour="Selected Colour";
 PFont Font;
+String eraser="Eraser";
 
 
 
@@ -61,6 +63,10 @@ showcolourX=displayWidth*1/10;
   showcolourY=displayHeight*0;
 showcolourWidth=displayWidth*1/10;
 showcolourHeight=displayHeight*1/10;
+eraseX=displayWidth*1/10;
+ eraseY=displayHeight*3/10;
+eraseWidth=displayWidth*1/10;
+eraseHeight=displayHeight*1/10;
 fill(Red);
  rect(redX, redY,redWidth, redHeight);
  fill(white);
@@ -90,11 +96,15 @@ fill(Green);
  fill(Gray);
  rect(grayX, grayY, grayWidth, grayHeight);
  fill(white);
- Font = createFont ("Calibri",10);
- textFont(Font,35);
+ Font = createFont ("Calibri",7);
+ textFont(Font,25);
  
  fill(Linecolour);
  rect(showcolourX,showcolourY,showcolourWidth,showcolourHeight);
  fill(textcolour);
  text(colour,showcolourX,showcolourY,showcolourWidth,showcolourHeight);
+ fill(white);
+ rect(eraseX, eraseY, eraseWidth,eraseHeight);
+ fill(Black);
+ text(eraser,eraseX, eraseY, eraseWidth,eraseHeight);
 }

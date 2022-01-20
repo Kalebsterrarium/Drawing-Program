@@ -14,7 +14,7 @@ Linecolour=#000000;
   fullScreen();
   one=1;
   ten=10;
-  Thick=1;
+  Thick=50;
   //
   population();
   quitButtonSetup();
@@ -94,6 +94,12 @@ void mousePressed() {
  {Linecolour=Brown; textcolour=white;}
  if (mouseX>grayX && mouseX<grayX+grayWidth && mouseY>grayY && mouseY<grayY+grayHeight) 
  {Linecolour=Gray; textcolour=Black;}
+ if (mouseX>thinX && mouseX<thinX+thinWidth && mouseY>thinY && mouseY<thinY+thinHeight) 
+ {Thick+=1;}
+ if (mouseX>thin2X && mouseX<thin2X+thin2Width && mouseY>thin2Y && mouseY<thin2Y+thin2Height) 
+ {Thick-=1;}
+ if (Thick==0) {Thick+=1;}
+ if (Thick>50) {Thick-=1;}
 }//End mousePressed()
 
 void keyPressed() {
