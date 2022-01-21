@@ -7,14 +7,18 @@ float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float backgroundX2, backgroundY2, backgroundWidth2, backgroundHeight2;
 float backgroundX3, backgroundY3, backgroundWidth3, backgroundHeight3;
 float backgroundX4, backgroundY4, backgroundWidth4, backgroundHeight4;
+float Width, Height;
 color Linecolour;
+Boolean triangledraw=false, linedraw=false, rectdraw=false;
 void setup() {
 
 Linecolour=#000000;
   fullScreen();
   one=1;
   ten=10;
-  Thick=50;
+  Thick=1;
+  Width= displayWidth*1/10;
+  Height= displayHeight*1/10;
   //
   population();
   quitButtonSetup();
@@ -22,13 +26,16 @@ Linecolour=#000000;
 
   //
 
-
+noStroke();
   rect(canvasX, canvasY, canvasWidth, canvasHeight);
+  stroke(1);
   fill(white);
 }//End setup()
 
 void draw() {
-
+  
+RandomColour = color(random(255),random(255),random(255));
+ 
   if (counting>100) 
   {
     move = false;
@@ -48,9 +55,19 @@ void draw() {
     test();
     stroke(Linecolour);
     strokeWeight(Thick);
+    if(triangledraw == true) {
+      stroke(Linecolour);
+    triangle(mouseX,mouseY-15,mouseX-10, mouseY+10, mouseX+10, mouseY+10);
+    }
+    if(rectdraw == true){
+       stroke(Linecolour);
+    rect(mouseX -15, mouseY -15,30,30);
+    }
+    //ellipse(mouseX,mouseY, Width, Height);
+    if(linedraw == true){
     line(mouseX, mouseY, pmouseX, pmouseY);
     strokeWeight(1);
-     
+    }
   }//End line draw
   fill(white);
 BackGround();
@@ -100,6 +117,12 @@ void mousePressed() {
  {Thick-=1;}
  if (Thick==0) {Thick+=1;}
  if (Thick>50) {Thick-=1;}
+ if (mouseX>eraseX && mouseX<eraseX+eraseWidth && mouseY>eraseY && mouseY<eraseY+eraseHeight) 
+ {Linecolour=white; textcolour=Black;}
+  if (mouseX>triangleX && mouseX<triangleX+triangleWidth && mouseY>triangleY && mouseY<triangleY+triangleHeight) 
+ {triangledraw=true; rectdraw=false;}
+ if (mouseX>RectX && mouseX<RectX+RectWidth && mouseY>RectY && mouseY<RectY+RectHeight) 
+ {rectdraw=true; triangledraw=false;}
 }//End mousePressed()
 
 void keyPressed() {
