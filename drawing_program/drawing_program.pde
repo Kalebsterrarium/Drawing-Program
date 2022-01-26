@@ -40,7 +40,9 @@ noStroke();
 }//End setup()
 
 void draw() {
-  
+  if(song[currentsong].position() >= song[currentsong].length()- 500) {
+    song[currentsong].rewind();
+  }
 RandomColour = color(random(255),random(255),random(255));
  
   if (counting>100) 
