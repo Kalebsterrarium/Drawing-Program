@@ -1,3 +1,10 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 //Global variables
 float canvasX, canvasY, canvasWidth, canvasHeight, drawingdiameter ;
 Boolean draw=false, move=true;
@@ -11,7 +18,7 @@ float Width;
 color Linecolour;
 Boolean triangledraw=false, linedraw=false, rectdraw=false, circledraw=false;
 void setup() {
-
+musicsetup();
 Linecolour=#000000;
   fullScreen();
   one=1;
@@ -81,6 +88,7 @@ BackGround();
 Colourbuttons();
 Thickness();
   quitButtonDraw();
+  musicdraw();
 }//End  draw()
 
 void mousePressed() {
@@ -134,6 +142,63 @@ void mousePressed() {
  {linedraw = true; rectdraw=false; triangledraw=false;circledraw=false;}
   if (mouseX>circleX && mouseX<circleX+circleWidth && mouseY>circleY && mouseY<circleY+circleHeight) 
  {circledraw=true;linedraw = false; rectdraw=false; triangledraw=false;}
+ if (mouseX>stopX && mouseX<stopX+stopWidth && mouseY>stopY && mouseY<stopY+stopHeight) 
+ { song[currentsong].pause();
+ }
+ if (mouseX>playX && mouseX<playX+playWidth && mouseY>playY && mouseY<playY+playHeight) 
+ {song[currentsong].play();
+ }
+ if (mouseX>nextX && mouseX<nextX+nextWidth && mouseY>nextY && mouseY<nextY+nextHeight) 
+ {if (song[currentsong].isPlaying()) {
+      song[currentsong].pause();
+      song[currentsong].rewind();
+      //
+      if ( currentsong == numberofsongs -1 ) {
+        currentsong=numberofsongs-numberofsongs;
+      } else {
+        currentsong ++;
+      }
+      //
+      song[currentsong].play();
+    } else {
+      song[currentsong].rewind();
+      if ( currentsong == numberofsongs -1 ) {
+        currentsong=numberofsongs-numberofsongs;
+      } else {
+        currentsong ++;
+      }
+  }
+ }
+ if (mouseX>previousX && mouseX<previousX+previousWidth && mouseY>previousY && mouseY<previousY+previousHeight) 
+ {if (song[currentsong].isPlaying()) {
+      song[currentsong].pause();
+      song[currentsong].rewind();
+      //
+      if (currentsong==numberofsongs-numberofsongs) {
+        currentsong = numberofsongs -1;
+      } else {
+        currentsong -=1;
+      }
+      //
+      song[currentsong].play();
+    } else {
+      song[currentsong].rewind();
+      if (currentsong==numberofsongs-numberofsongs) {
+        currentsong = numberofsongs -1;
+      } else {
+        currentsong -=1;
+      }
+  }
+ }
+ if (mouseX>skip1X && mouseX<skip1X+skip1Width && mouseY>skip1Y && mouseY<skip1Y+skip1Height) 
+ {song[currentsong].skip(1000);
+ }
+ if (mouseX>skip2X && mouseX<skip2X+skip2Width && mouseY>skip2Y && mouseY<skip2Y+skip2Height) 
+ {song[currentsong].skip(-1000);
+ }
+ if (mouseX>restartX && mouseX<restartX+restartWidth && mouseY>restartY && mouseY<restartY+restartHeight) 
+ {song[currentsong].rewind();
+ }
 }//End mousePressed()
 
 void keyPressed() {
