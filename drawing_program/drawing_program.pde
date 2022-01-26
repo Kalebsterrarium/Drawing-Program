@@ -16,7 +16,7 @@ float backgroundX3, backgroundY3, backgroundWidth3, backgroundHeight3;
 float backgroundX4, backgroundY4, backgroundWidth4, backgroundHeight4;
 float Width;
 color Linecolour;
-Boolean triangledraw=false, linedraw=false, rectdraw=false, circledraw=false;
+Boolean triangledraw=false, linedraw=false, rectdraw=false, circledraw=false, canvas1= true, canvas2=false, canvas3=false;
 void setup() {
 musicsetup();
 Linecolour=#000000;
@@ -33,13 +33,12 @@ Linecolour=#000000;
 
   //
 
-noStroke();
-  rect(canvasX, canvasY, canvasWidth, canvasHeight);
-  stroke(1);
+ stroke(1);
   fill(white);
 }//End setup()
 
 void draw() {
+  
   Thickness = Integer.toString(Thick);
   if(song[currentsong].position() >= song[currentsong].length()- 500) {
     song[currentsong].rewind();
@@ -92,6 +91,7 @@ Colourbuttons();
 Thickness();
   quitButtonDraw();
   musicdraw();
+   canvas();
 }//End  draw()
 
 void mousePressed() {
@@ -201,6 +201,31 @@ void mousePressed() {
  }
  if (mouseX>restartX && mouseX<restartX+restartWidth && mouseY>restartY && mouseY<restartY+restartHeight) 
  {song[currentsong].rewind();
+ }
+ if (mouseX>image1selectorX && mouseX<image1selectorX+image1selectorWidth && mouseY>image1selectorY && mouseY<image1selectorY+image1selectorHeight) 
+ {canvas1=false; canvas2=true; canvas3=false;
+ if ( canvas2 == true){
+  fill(white);
+  rect(image1X,image1Y,image1Width,image1Height);
+image(pic1,image1X,image1Y,image1Width,image1Height);
+}
+ }
+ if (mouseX>image2selectorX && mouseX<image2selectorX+image2selectorWidth && mouseY>image2selectorY && mouseY<image2selectorY+image2selectorHeight) 
+ {canvas1=false; canvas2=false; canvas3=true;
+ if(canvas3 == true){
+  
+  image(pic2,image2X,image2Y,image2Width,image2Height);
+}
+ }
+ if (mouseX>buttonX && mouseX<buttonX+buttonWidth && mouseY>buttonY && mouseY<buttonY+buttonHeight) 
+ { canvas1=true; canvas2=false; canvas3=false;
+ if (canvas1 == true)
+{noStroke();
+fill(white);
+  rect(canvasX, canvasY, canvasWidth, canvasHeight);
+ 
+  
+}
  }
 }//End mousePressed()
 
