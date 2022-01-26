@@ -14,8 +14,7 @@ color Red=#FF0000,Yellow=#FFFF00,Orange=#FFA500,Green=#00FF00,Blue=#0000FF,Indig
 String colour="Selected Colour";
 PFont Font;
 String eraser="Eraser";
-
-
+String Thickness;
 
 
 void Colourbuttons() {
@@ -67,6 +66,7 @@ eraseX=displayWidth*1/10;
  eraseY=displayHeight*3/10;
 eraseWidth=displayWidth*1/10;
 eraseHeight=displayHeight*1/10;
+
 fill(Red);
  rect(redX, redY,redWidth, redHeight);
  fill(white);
@@ -102,9 +102,10 @@ fill(Green);
  fill(Linecolour);
  rect(showcolourX,showcolourY,showcolourWidth,showcolourHeight);
  fill(textcolour);
- text(colour,showcolourX,showcolourY,showcolourWidth,showcolourHeight);
+ text(colour+" Thickness="+Thickness,showcolourX,showcolourY,showcolourWidth,showcolourHeight);
  fill(white);
  rect(eraseX, eraseY, eraseWidth,eraseHeight);
  fill(Black);
  text(eraser,eraseX, eraseY, eraseWidth,eraseHeight);
+
 }

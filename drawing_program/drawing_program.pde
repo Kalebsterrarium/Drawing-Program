@@ -40,6 +40,7 @@ noStroke();
 }//End setup()
 
 void draw() {
+  Thickness = Integer.toString(Thick);
   if(song[currentsong].position() >= song[currentsong].length()- 500) {
     song[currentsong].rewind();
   }
