@@ -1,9 +1,10 @@
 float thinX,thinY,thinWidth,thinHeight;
 float thin2X,thin2Y,thin2Width,thin2Height;
-String thick1="Increase Thickness" , thick2="Decrease Thickness", triangle="Triangle", rectangle="Rectangle";
+String thick1="Increase Thickness" , thick2="Decrease Thickness", triangle="Triangle", rectangle="Rectangle" ,linetext="Line", circle="Circle";
 float triangleX,triangleY,triangleWidth, triangleHeight;
 float RectX, RectY, RectWidth, RectHeight;
-
+float LineboxX,LineboxY,LineboxWidth, LineboxHeight;
+float circleX, circleY, circleWidth, circleHeight;
 
 void Thickness() {
 thinX = thin2X=displayWidth*1/10;
@@ -19,7 +20,14 @@ RectX = displayWidth*1/10;
 RectY=displayHeight*5/10;
 RectWidth = displayWidth*1/10;
 RectHeight = displayHeight*1/10;
-
+LineboxX = displayWidth*1/10;
+LineboxY=displayHeight*6/10;
+LineboxWidth = displayWidth*1/10;
+LineboxHeight = displayHeight*1/10;
+circleX = displayWidth*1/10;
+circleY=displayHeight*7/10;
+circleWidth = displayWidth*1/10;
+circleHeight = displayHeight*1/10;
 Font = createFont ("Calibri",10);
 textFont(Font,35);
 
@@ -39,4 +47,12 @@ fill(white);
 rect(RectX,RectY,RectWidth,RectHeight);
 fill(Black);
 text(rectangle,RectX,RectY,RectWidth, RectHeight);
+fill(white);
+rect(LineboxX,LineboxY,LineboxWidth, LineboxHeight);
+fill(Black);
+text(linetext,LineboxX,LineboxY,LineboxWidth, LineboxHeight);
+fill(white);
+rect(circleX, circleY, circleWidth, circleHeight);
+fill(Black);
+text(circle,circleX, circleY, circleWidth, circleHeight);
 }

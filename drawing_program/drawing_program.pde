@@ -7,9 +7,9 @@ float backgroundX, backgroundY, backgroundWidth, backgroundHeight;
 float backgroundX2, backgroundY2, backgroundWidth2, backgroundHeight2;
 float backgroundX3, backgroundY3, backgroundWidth3, backgroundHeight3;
 float backgroundX4, backgroundY4, backgroundWidth4, backgroundHeight4;
-float Width, Height;
+float Width;
 color Linecolour;
-Boolean triangledraw=false, linedraw=false, rectdraw=false;
+Boolean triangledraw=false, linedraw=false, rectdraw=false, circledraw=false;
 void setup() {
 
 Linecolour=#000000;
@@ -18,7 +18,7 @@ Linecolour=#000000;
   ten=10;
   Thick=1;
   Width= displayWidth*1/10;
-  Height= displayHeight*1/10;
+  
   //
   population();
   quitButtonSetup();
@@ -57,17 +57,24 @@ RandomColour = color(random(255),random(255),random(255));
     strokeWeight(Thick);
     if(triangledraw == true) {
       stroke(Linecolour);
+      fill(Linecolour);
     triangle(mouseX,mouseY-15,mouseX-10, mouseY+10, mouseX+10, mouseY+10);
     }
     if(rectdraw == true){
        stroke(Linecolour);
+       fill(Linecolour);
     rect(mouseX -15, mouseY -15,30,30);
     }
-    //ellipse(mouseX,mouseY, Width, Height);
+    if (circledraw == true) { 
+      stroke(Linecolour);
+      fill(Linecolour);
+    ellipse(mouseX,mouseY, 30, 30);
+  }
     if(linedraw == true){
     line(mouseX, mouseY, pmouseX, pmouseY);
-    strokeWeight(1);
+    
     }
+    strokeWeight(1);
   }//End line draw
   fill(white);
 BackGround();
@@ -120,9 +127,13 @@ void mousePressed() {
  if (mouseX>eraseX && mouseX<eraseX+eraseWidth && mouseY>eraseY && mouseY<eraseY+eraseHeight) 
  {Linecolour=white; textcolour=Black;}
   if (mouseX>triangleX && mouseX<triangleX+triangleWidth && mouseY>triangleY && mouseY<triangleY+triangleHeight) 
- {triangledraw=true; rectdraw=false;}
+ {triangledraw=true; rectdraw=false; linedraw=false;circledraw=false;}
  if (mouseX>RectX && mouseX<RectX+RectWidth && mouseY>RectY && mouseY<RectY+RectHeight) 
- {rectdraw=true; triangledraw=false;}
+ {rectdraw=true; triangledraw=false; linedraw=false;circledraw=false;}
+ if (mouseX>LineboxX && mouseX<LineboxX+LineboxWidth && mouseY>LineboxY && mouseY<LineboxY+LineboxHeight) 
+ {linedraw = true; rectdraw=false; triangledraw=false;circledraw=false;}
+  if (mouseX>circleX && mouseX<circleX+circleWidth && mouseY>circleY && mouseY<circleY+circleHeight) 
+ {circledraw=true;linedraw = false; rectdraw=false; triangledraw=false;}
 }//End mousePressed()
 
 void keyPressed() {
